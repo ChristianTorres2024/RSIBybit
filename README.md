@@ -1,16 +1,26 @@
-### Script LCD python para Binance
+### RSI Bot de trading para futuros de Bybit
 
-Este script fue desarrollado para poder analizar las monedas o tokens de futuros de Binance para poder operar con LCD en ellas.
+Este bot fue desarrollado para abrir y cerrar operaciones con el indicador RSI.
 
 **Como usar el script**
 - Descargar python [Aqui](https://www.python.org/ "Aqui")
-- Descargar y modificar el Archivo config.py, el archivo lo puedes modificar con sublime text, el cual puedes descargar [Aqui](https://www.sublimetext.com/ "Aqui")
-- Modifica el numero de dias de acuerdo al analisis que deseas hacer.
+- Descargar y modificar el Archivo script.py, el archivo lo puedes modificar con sublime text o algun otro editor de codigo como pycharm.
+- Recuerda agregar las apis de Bybit, las apis las puedes encontrar [Aqui](https://partner.bybit.com/b/GafasTrading "Aqui")
+- Ahora busca las siguientes lineas y modificalas a tu gusto.
 ```python
-API_KEY = ''
-API_SECRET = ''
+# Configuración del cliente API
+api_key = ""
+api_secret = ""
+symbol = "BTCUSDT"
+timeframe = "5"  # Intervalo de tiempo 1,3,5,15,30,60,120,240,360,720,D,M,W
+rsi_periodo = 14
+usdt = 10  # Cantidad en dolares que se va a operar
 
-dias = 7  #Numero de dias a analizar de cada moneda o token
+tp_percent = 0.2  # Take profit porcentaje
+sl_percent = 0.4  # Stop loss porcentaje
+
+if rsi >= 70: # Valor del RSI para iniciar un SHORT
+if rsi <= 30: # Valor del RSI para iniciar un LONG
 ```
 - Una vez guardado el archivo debes ejecutarlo desde una terminal de windows o de tu sistema operativo que uses con el siguiente comando.
 `python script.py`
