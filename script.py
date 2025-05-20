@@ -6,17 +6,17 @@ from decimal import Decimal, ROUND_DOWN, ROUND_FLOOR
 import time
 
 # Configuración del cliente API
-api_key = ""
-api_secret = ""
+api_key = "8haYfkWVTkoIjyvaGM"
+api_secret = "7jD6Q1VJVzkCRlaajGnhkLjJl27EUjILncqN"
 symbol = "BTCUSDT"
-timeframe = "5"  # Intervalo de tiempo 1,3,5,15,30,60,120,240,360,720,D,M,W
+timeframe = "1"  # Intervalo de tiempo 1,3,5,15,30,60,120,240,360,720,D,M,W
 rsi_periodo = 14
 usdt = 10  # Cantidad en dolares que se va a operar
 
 tp_percent = 0.2  # Take profit porcentaje
 sl_percent = 0.4  # Stop loss porcentaje
 
-client = HTTP(api_key=api_key, api_secret=api_secret, testnet=False)
+client = HTTP(api_key=api_key, api_secret=api_secret, testnet=True)
 
 # Datos de la moneda
 step = client.get_instruments_info(category="linear", symbol=symbol)
